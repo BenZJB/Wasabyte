@@ -1,5 +1,5 @@
 //
-//  LeaderboardView.swift
+//  SettingsView.swift
 //  Thrive
 //
 //  Created by Sean Lin on 08/11/2024
@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct LeaderboardView: View {
+struct CatView: View {
     var body: some View {
-        Text("Leaderboard View")
+        Text("Cat")
     }
 }

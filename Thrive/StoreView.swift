@@ -1,5 +1,5 @@
 //
-//  AskView.swift
+//  CommunityView.swift
 //  Thrive
 //
 //  Created by Sean Lin on 08/11/2024
@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct AskView: View {
+struct StoreView: View {
     var body: some View {
-        Text("Ask View")
+        Text("Store")
     }
 }

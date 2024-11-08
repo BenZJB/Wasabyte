@@ -20,38 +20,20 @@ struct ContentView: View {
                     }
                 }
 
-            AskView()
+            StoreView()
                .tabItem {
                     VStack {
-                        Image(systemName: "message")
-                        Text("Ask")
-                           .font(.caption)
-                    }
-                }
-
-            CommunityView()
-               .tabItem {
-                    VStack {
-                        Image(systemName: "person.2.wave.2.fill")
-                        Text("Community")
+                        Image(systemName: "storefront.fill")
+                        Text("Store")
                            .font(.caption)
                     }
                 }
             
-            LeaderboardView()
+            CatView()
                .tabItem {
                     VStack {
-                        Image(systemName: "flag")
-                        Text("Leaderboard")
-                           .font(.caption)
-                    }
-                }
-            
-            SettingsView()
-               .tabItem {
-                    VStack {
-                        Image(systemName: "gearshape")
-                        Text("Settings")
+                        Image(systemName: "cat.fill")
+                        Text("Cat")
                            .font(.caption)
                     }
                 }
