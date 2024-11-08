@@ -12,12 +12,12 @@ struct HomeView: View {
         }
         
         // Step 2: Set up the OpenAI API request
-        let apiKey = "YOUR_OPENAI_API_KEY"
-        let url = URL(string: "https://api.openai.com/v1/completions")!
+        // let apiKey = "YOUR_OPENAI_API_KEY"
+        let url = URL(string: "http://localhost:1234/v1")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        // request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         // Step 3: Prepare the request body
