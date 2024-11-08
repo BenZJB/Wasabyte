@@ -1,35 +1,27 @@
 import SwiftUI
+import Vision
+import UIKit
 import UniformTypeIdentifiers
 
 struct HomeView: View {
     @State private var isFileImporterPresented = false
     @State private var selectedFileURL: URL?
-    func sendTextFileToOpenAI(fileURL: URL) {
-        // Step 1: Read the file content
-        guard let fileContent = try? String(contentsOf: fileURL, encoding: .utf8) else {
-            print("Failed to read file content.")
-            return
-        }
-        
-        // Step 2: Set up the OpenAI API request
-        // let apiKey = "YOUR_OPENAI_API_KEY"
+
+    func sendTextToOpenAI(prompt: String) {
         let url = URL(string: "http://localhost:1234/v1")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        // request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        // Step 3: Prepare the request body
         let requestBody: [String: Any] = [
             "model": "gpt-4",
-            "prompt": fileContent,
+            "prompt": prompt,
             "max_tokens": 100
         ]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody)
         
-        // Step 4: Send the request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print("Error sending request: \(error)")
@@ -37,13 +29,48 @@ struct HomeView: View {
             }
             
             if let data = data, let responseText = String(data: data, encoding: .utf8) {
-                print("Response from OpenAI: \(responseText)")
+                print("Response from API: \(responseText)")
             }
         }
         
         task.resume()
     }
     
+    func extractTextFromImage(_ image: UIImage, completion: @escaping (String?) -> Void) {
+        guard let cgImage = image.cgImage else {
+            print("Failed to convert UIImage to CGImage.")
+            completion(nil)
+            return
+        }
+        
+        let request = VNRecognizeTextRequest { (request, error) in
+            if let error = error {
+                print("Text recognition error: \(error)")
+                completion(nil)
+                return
+            }
+            
+            let recognizedText = request.results?.compactMap { result -> String? in
+                guard let observation = result as? VNRecognizedTextObservation else { return nil }
+                return observation.topCandidates(1).first?.string
+            }.joined(separator: "\n")
+            
+            completion(recognizedText)
+        }
+        
+        request.recognitionLevel = .accurate
+        
+        let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                try requestHandler.perform([request])
+            } catch {
+                print("Failed to perform text recognition: \(error)")
+                completion(nil)
+            }
+        }
+    }
+
     var body: some View {
         VStack(spacing: 20) {
             // Custom Top Section
@@ -58,7 +85,7 @@ struct HomeView: View {
                         .bold()
                     Spacer()
                     Button(action: {
-                        isFileImporterPresented = true  // Set to true to open file picker
+                        isFileImporterPresented = true
                     }) {
                         Image(systemName: "document.badge.plus")
                             .font(.title2)
@@ -66,13 +93,25 @@ struct HomeView: View {
                     }
                     .fileImporter(
                         isPresented: $isFileImporterPresented,
-                        allowedContentTypes: [.image, .pdf],
-                        allowsMultipleSelection: false // Set to false to select only one file
+                        allowedContentTypes: [.image],
+                        allowsMultipleSelection: false
                     ) { result in
                         do {
                             selectedFileURL = try result.get().first
                             print("Selected file URL: \(String(describing: selectedFileURL))")
-                            sendTextFileToOpenAI(fileURL:selectedFileURL!)
+                            
+                            // Ensure we have a valid URL and try to load it as a UIImage
+                            if let fileURL = selectedFileURL,
+                               let image = UIImage(contentsOfFile: fileURL.path) {
+                                extractTextFromImage(image) { recognizedText in
+                                    if let text = recognizedText {
+                                        print("Extracted text: \(text)")
+                                        sendTextToOpenAI(prompt: text)
+                                    } else {
+                                        print("No text recognized in the image.")
+                                    }
+                                }
+                            }
                         } catch {
                             print("Error selecting file: \(error.localizedDescription)")
                         }
