@@ -7,40 +7,40 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		BA1A678A2CDE98E3006F7456 /* PBXContainerItemProxy */ = {
+		BA1A67C02CDEA2D5006F7456 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BA1A67702CDE98E2006F7456 /* Project object */;
+			containerPortal = BA1A67A72CDEA2D4006F7456 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BA1A67772CDE98E2006F7456;
+			remoteGlobalIDString = BA1A67AE2CDEA2D4006F7456;
 			remoteInfo = Thrive;
 		};
-		BA1A67942CDE98E3006F7456 /* PBXContainerItemProxy */ = {
+		BA1A67CA2CDEA2D5006F7456 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BA1A67702CDE98E2006F7456 /* Project object */;
+			containerPortal = BA1A67A72CDEA2D4006F7456 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BA1A67772CDE98E2006F7456;
+			remoteGlobalIDString = BA1A67AE2CDEA2D4006F7456;
 			remoteInfo = Thrive;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA1A67782CDE98E2006F7456 /* Thrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA1A67892CDE98E3006F7456 /* ThriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA1A67932CDE98E3006F7456 /* ThriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1A67AF2CDEA2D4006F7456 /* Thrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1A67BF2CDEA2D5006F7456 /* ThriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1A67C92CDEA2D5006F7456 /* ThriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BA1A677A2CDE98E2006F7456 /* Thrive */ = {
+		BA1A67B12CDEA2D4006F7456 /* Thrive */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Thrive;
 			sourceTree = "<group>";
 		};
-		BA1A678C2CDE98E3006F7456 /* ThriveTests */ = {
+		BA1A67C22CDEA2D5006F7456 /* ThriveTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ThriveTests;
 			sourceTree = "<group>";
 		};
-		BA1A67962CDE98E3006F7456 /* ThriveUITests */ = {
+		BA1A67CC2CDEA2D5006F7456 /* ThriveUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ThriveUITests;
 			sourceTree = "<group>";
@@ -48,21 +48,21 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BA1A67752CDE98E2006F7456 /* Frameworks */ = {
+		BA1A67AC2CDEA2D4006F7456 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA1A67862CDE98E3006F7456 /* Frameworks */ = {
+		BA1A67BC2CDEA2D5006F7456 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA1A67902CDE98E3006F7456 /* Frameworks */ = {
+		BA1A67C62CDEA2D5006F7456 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,22 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BA1A676F2CDE98E2006F7456 = {
+		BA1A67A62CDEA2D4006F7456 = {
 			isa = PBXGroup;
 			children = (
-				BA1A677A2CDE98E2006F7456 /* Thrive */,
-				BA1A678C2CDE98E3006F7456 /* ThriveTests */,
-				BA1A67962CDE98E3006F7456 /* ThriveUITests */,
-				BA1A67792CDE98E2006F7456 /* Products */,
+				BA1A67B12CDEA2D4006F7456 /* Thrive */,
+				BA1A67C22CDEA2D5006F7456 /* ThriveTests */,
+				BA1A67CC2CDEA2D5006F7456 /* ThriveUITests */,
+				BA1A67B02CDEA2D4006F7456 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BA1A67792CDE98E2006F7456 /* Products */ = {
+		BA1A67B02CDEA2D4006F7456 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA1A67782CDE98E2006F7456 /* Thrive.app */,
-				BA1A67892CDE98E3006F7456 /* ThriveTests.xctest */,
-				BA1A67932CDE98E3006F7456 /* ThriveUITests.xctest */,
+				BA1A67AF2CDEA2D4006F7456 /* Thrive.app */,
+				BA1A67BF2CDEA2D5006F7456 /* ThriveTests.xctest */,
+				BA1A67C92CDEA2D5006F7456 /* ThriveUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,134 +95,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA1A67772CDE98E2006F7456 /* Thrive */ = {
+		BA1A67AE2CDEA2D4006F7456 /* Thrive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA1A679D2CDE98E3006F7456 /* Build configuration list for PBXNativeTarget "Thrive" */;
+			buildConfigurationList = BA1A67D32CDEA2D5006F7456 /* Build configuration list for PBXNativeTarget "Thrive" */;
 			buildPhases = (
-				BA1A67742CDE98E2006F7456 /* Sources */,
-				BA1A67752CDE98E2006F7456 /* Frameworks */,
-				BA1A67762CDE98E2006F7456 /* Resources */,
+				BA1A67AB2CDEA2D4006F7456 /* Sources */,
+				BA1A67AC2CDEA2D4006F7456 /* Frameworks */,
+				BA1A67AD2CDEA2D4006F7456 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				BA1A677A2CDE98E2006F7456 /* Thrive */,
+				BA1A67B12CDEA2D4006F7456 /* Thrive */,
 			);
 			name = Thrive;
 			packageProductDependencies = (
 			);
 			productName = Thrive;
-			productReference = BA1A67782CDE98E2006F7456 /* Thrive.app */;
+			productReference = BA1A67AF2CDEA2D4006F7456 /* Thrive.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BA1A67882CDE98E3006F7456 /* ThriveTests */ = {
+		BA1A67BE2CDEA2D5006F7456 /* ThriveTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA1A67A02CDE98E3006F7456 /* Build configuration list for PBXNativeTarget "ThriveTests" */;
+			buildConfigurationList = BA1A67D62CDEA2D5006F7456 /* Build configuration list for PBXNativeTarget "ThriveTests" */;
 			buildPhases = (
-				BA1A67852CDE98E3006F7456 /* Sources */,
-				BA1A67862CDE98E3006F7456 /* Frameworks */,
-				BA1A67872CDE98E3006F7456 /* Resources */,
+				BA1A67BB2CDEA2D5006F7456 /* Sources */,
+				BA1A67BC2CDEA2D5006F7456 /* Frameworks */,
+				BA1A67BD2CDEA2D5006F7456 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BA1A678B2CDE98E3006F7456 /* PBXTargetDependency */,
+				BA1A67C12CDEA2D5006F7456 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				BA1A678C2CDE98E3006F7456 /* ThriveTests */,
+				BA1A67C22CDEA2D5006F7456 /* ThriveTests */,
 			);
 			name = ThriveTests;
 			packageProductDependencies = (
 			);
 			productName = ThriveTests;
-			productReference = BA1A67892CDE98E3006F7456 /* ThriveTests.xctest */;
+			productReference = BA1A67BF2CDEA2D5006F7456 /* ThriveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BA1A67922CDE98E3006F7456 /* ThriveUITests */ = {
+		BA1A67C82CDEA2D5006F7456 /* ThriveUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA1A67A32CDE98E3006F7456 /* Build configuration list for PBXNativeTarget "ThriveUITests" */;
+			buildConfigurationList = BA1A67D92CDEA2D5006F7456 /* Build configuration list for PBXNativeTarget "ThriveUITests" */;
 			buildPhases = (
-				BA1A678F2CDE98E3006F7456 /* Sources */,
-				BA1A67902CDE98E3006F7456 /* Frameworks */,
-				BA1A67912CDE98E3006F7456 /* Resources */,
+				BA1A67C52CDEA2D5006F7456 /* Sources */,
+				BA1A67C62CDEA2D5006F7456 /* Frameworks */,
+				BA1A67C72CDEA2D5006F7456 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BA1A67952CDE98E3006F7456 /* PBXTargetDependency */,
+				BA1A67CB2CDEA2D5006F7456 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				BA1A67962CDE98E3006F7456 /* ThriveUITests */,
+				BA1A67CC2CDEA2D5006F7456 /* ThriveUITests */,
 			);
 			name = ThriveUITests;
 			packageProductDependencies = (
 			);
 			productName = ThriveUITests;
-			productReference = BA1A67932CDE98E3006F7456 /* ThriveUITests.xctest */;
+			productReference = BA1A67C92CDEA2D5006F7456 /* ThriveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BA1A67702CDE98E2006F7456 /* Project object */ = {
+		BA1A67A72CDEA2D4006F7456 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
-					BA1A67772CDE98E2006F7456 = {
+					BA1A67AE2CDEA2D4006F7456 = {
 						CreatedOnToolsVersion = 16.1;
 					};
-					BA1A67882CDE98E3006F7456 = {
+					BA1A67BE2CDEA2D5006F7456 = {
 						CreatedOnToolsVersion = 16.1;
-						TestTargetID = BA1A67772CDE98E2006F7456;
+						TestTargetID = BA1A67AE2CDEA2D4006F7456;
 					};
-					BA1A67922CDE98E3006F7456 = {
+					BA1A67C82CDEA2D5006F7456 = {
 						CreatedOnToolsVersion = 16.1;
-						TestTargetID = BA1A67772CDE98E2006F7456;
+						TestTargetID = BA1A67AE2CDEA2D4006F7456;
 					};
 				};
 			};
-			buildConfigurationList = BA1A67732CDE98E2006F7456 /* Build configuration list for PBXProject "Thrive" */;
+			buildConfigurationList = BA1A67AA2CDEA2D4006F7456 /* Build configuration list for PBXProject "Thrive" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = BA1A676F2CDE98E2006F7456;
+			mainGroup = BA1A67A62CDEA2D4006F7456;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = BA1A67792CDE98E2006F7456 /* Products */;
+			productRefGroup = BA1A67B02CDEA2D4006F7456 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA1A67772CDE98E2006F7456 /* Thrive */,
-				BA1A67882CDE98E3006F7456 /* ThriveTests */,
-				BA1A67922CDE98E3006F7456 /* ThriveUITests */,
+				BA1A67AE2CDEA2D4006F7456 /* Thrive */,
+				BA1A67BE2CDEA2D5006F7456 /* ThriveTests */,
+				BA1A67C82CDEA2D5006F7456 /* ThriveUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BA1A67762CDE98E2006F7456 /* Resources */ = {
+		BA1A67AD2CDEA2D4006F7456 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA1A67872CDE98E3006F7456 /* Resources */ = {
+		BA1A67BD2CDEA2D5006F7456 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA1A67912CDE98E3006F7456 /* Resources */ = {
+		BA1A67C72CDEA2D5006F7456 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,21 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BA1A67742CDE98E2006F7456 /* Sources */ = {
+		BA1A67AB2CDEA2D4006F7456 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA1A67852CDE98E3006F7456 /* Sources */ = {
+		BA1A67BB2CDEA2D5006F7456 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA1A678F2CDE98E3006F7456 /* Sources */ = {
+		BA1A67C52CDEA2D5006F7456 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,20 +256,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BA1A678B2CDE98E3006F7456 /* PBXTargetDependency */ = {
+		BA1A67C12CDEA2D5006F7456 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA1A67772CDE98E2006F7456 /* Thrive */;
-			targetProxy = BA1A678A2CDE98E3006F7456 /* PBXContainerItemProxy */;
+			target = BA1A67AE2CDEA2D4006F7456 /* Thrive */;
+			targetProxy = BA1A67C02CDEA2D5006F7456 /* PBXContainerItemProxy */;
 		};
-		BA1A67952CDE98E3006F7456 /* PBXTargetDependency */ = {
+		BA1A67CB2CDEA2D5006F7456 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA1A67772CDE98E2006F7456 /* Thrive */;
-			targetProxy = BA1A67942CDE98E3006F7456 /* PBXContainerItemProxy */;
+			target = BA1A67AE2CDEA2D4006F7456 /* Thrive */;
+			targetProxy = BA1A67CA2CDEA2D5006F7456 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		BA1A679B2CDE98E3006F7456 /* Debug */ = {
+		BA1A67D12CDEA2D5006F7456 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,18 +321,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		BA1A679C2CDE98E3006F7456 /* Release */ = {
+		BA1A67D22CDEA2D5006F7456 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,100 +378,109 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		BA1A679E2CDE98E3006F7456 /* Debug */ = {
+		BA1A67D42CDEA2D5006F7456 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Thrive/Thrive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Thrive/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wasabyte.Thrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		BA1A679F2CDE98E3006F7456 /* Release */ = {
+		BA1A67D52CDEA2D5006F7456 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Thrive/Thrive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Thrive/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wasabyte.Thrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		BA1A67A12CDE98E3006F7456 /* Debug */ = {
+		BA1A67D72CDEA2D5006F7456 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wasabyte.ThriveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Thrive";
 			};
 			name = Debug;
 		};
-		BA1A67A22CDE98E3006F7456 /* Release */ = {
+		BA1A67D82CDEA2D5006F7456 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wasabyte.ThriveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Thrive";
 			};
 			name = Release;
 		};
-		BA1A67A42CDE98E3006F7456 /* Debug */ = {
+		BA1A67DA2CDEA2D5006F7456 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -482,11 +491,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Thrive;
 			};
 			name = Debug;
 		};
-		BA1A67A52CDE98E3006F7456 /* Release */ = {
+		BA1A67DB2CDEA2D5006F7456 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -497,6 +507,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Thrive;
 			};
 			name = Release;
@@ -504,43 +515,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA1A67732CDE98E2006F7456 /* Build configuration list for PBXProject "Thrive" */ = {
+		BA1A67AA2CDEA2D4006F7456 /* Build configuration list for PBXProject "Thrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA1A679B2CDE98E3006F7456 /* Debug */,
-				BA1A679C2CDE98E3006F7456 /* Release */,
+				BA1A67D12CDEA2D5006F7456 /* Debug */,
+				BA1A67D22CDEA2D5006F7456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA1A679D2CDE98E3006F7456 /* Build configuration list for PBXNativeTarget "Thrive" */ = {
+		BA1A67D32CDEA2D5006F7456 /* Build configuration list for PBXNativeTarget "Thrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA1A679E2CDE98E3006F7456 /* Debug */,
-				BA1A679F2CDE98E3006F7456 /* Release */,
+				BA1A67D42CDEA2D5006F7456 /* Debug */,
+				BA1A67D52CDEA2D5006F7456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA1A67A02CDE98E3006F7456 /* Build configuration list for PBXNativeTarget "ThriveTests" */ = {
+		BA1A67D62CDEA2D5006F7456 /* Build configuration list for PBXNativeTarget "ThriveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA1A67A12CDE98E3006F7456 /* Debug */,
-				BA1A67A22CDE98E3006F7456 /* Release */,
+				BA1A67D72CDEA2D5006F7456 /* Debug */,
+				BA1A67D82CDEA2D5006F7456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA1A67A32CDE98E3006F7456 /* Build configuration list for PBXNativeTarget "ThriveUITests" */ = {
+		BA1A67D92CDEA2D5006F7456 /* Build configuration list for PBXNativeTarget "ThriveUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BA1A67A42CDE98E3006F7456 /* Debug */,
-				BA1A67A52CDE98E3006F7456 /* Release */,
+				BA1A67DA2CDEA2D5006F7456 /* Debug */,
+				BA1A67DB2CDEA2D5006F7456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BA1A67702CDE98E2006F7456 /* Project object */;
+	rootObject = BA1A67A72CDEA2D4006F7456 /* Project object */;
 }
