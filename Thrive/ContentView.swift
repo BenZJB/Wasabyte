@@ -10,16 +10,57 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomeView()
+               .tabItem {
+                    VStack {
+                        Image(systemName: "house")
+                        Text("Home")
+                           .font(.caption)
+                    }
+                }
+
+            AskView()
+               .tabItem {
+                    VStack {
+                        Image(systemName: "message")
+                        Text("Ask")
+                           .font(.caption)
+                    }
+                }
+
+            CommunityView()
+               .tabItem {
+                    VStack {
+                        Image(systemName: "person.2.wave.2.fill")
+                        Text("Community")
+                           .font(.caption)
+                    }
+                }
+            
+            LeaderboardView()
+               .tabItem {
+                    VStack {
+                        Image(systemName: "flag")
+                        Text("Leaderboard")
+                           .font(.caption)
+                    }
+                }
+            
+            SettingsView()
+               .tabItem {
+                    VStack {
+                        Image(systemName: "gearshape")
+                        Text("Settings")
+                           .font(.caption)
+                    }
+                }
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
