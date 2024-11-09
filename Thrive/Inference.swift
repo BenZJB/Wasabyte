@@ -11,51 +11,76 @@ import Vision
 import UIKit
 import UniformTypeIdentifiers
 
-func sendTextToOpenAI(prompt: String, completion: @escaping (String?) -> Void) {
+func sendTextToOpenAI(sysPrompt: String = "", usrPrompt: String) -> String? {
     let url = URL(string: "http://localhost:1234/v1/chat/completions")!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     
-    let newPrompt = """
-    Analyze the image of the patient’s health record provided below. Extract details about their treatment plan and present the data in the specified format.
-
-        •    Details to extract:
-        •    Medicine: Name of each prescribed medicine.
-        •    Dose: Dosage of each medicine.
-        •    Frequency: Frequency with which each medicine should be administered.
-        •    Output Format: Provide your response in this exact structure for consistent string handling:
-
-    [
-        {"Medicine": "Medicine 1", "Dose": "Dose 1", "Frequency": "Frequency 1"},
-        {"Medicine": "Medicine 2", "Dose": "Dose 2", "Frequency": "Frequency 2"},
-        ...
-    ]
-    """ + prompt
+    if sysPrompt == "" {
+        
+        let sysPrompt = """
+        Analyze the image of the patient’s health record provided below. Extract details about their treatment plan and present the data in the specified format.
+        
+            •    Details to extract:
+            •    Medicine: Name of each prescribed medicine.
+            •    Dose: Dosage of each medicine.
+            •    Frequency: Frequency with which each medicine should be administered.
+            •    Output Format: Provide your response in this exact structure for consistent string handling:
+        
+        [
+            {"Medicine": "Medicine 1", "Dose": "Dose 1", "Frequency": "Frequency 1"},
+            {"Medicine": "Medicine 2", "Dose": "Dose 2", "Frequency": "Frequency 2"},
+            ...
+        ]
+        """
+    }
     
     let requestBody: [String: Any] = [
-        "model": "mistral-nemo",
-        "prompt": newPrompt,
+        "model": "ministral",
+        "messages": [
+            ["role": "system", "content": sysPrompt],
+            ["role": "user", "content": usrPrompt]
+        ],
         "max_tokens": 4096
     ]
     
-    request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody)
+    // Create a DispatchGroup to manage the synchronous wait
+    let dispatchGroup = DispatchGroup()
+    var responseText: String?
+    var requestError: Error?
+    
+    // Begin the network request
+    dispatchGroup.enter()
+    
+    let requestData = try? JSONSerialization.data(withJSONObject: requestBody)
+    request.httpBody = requestData
     
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        defer { dispatchGroup.leave() }
+        
         if let error = error {
-            print("Error sending request: \(error)")
-            completion(nil) // Returning nil in case of error
+            requestError = error
             return
         }
         
-        if let data = data, let responseText = String(data: data, encoding: .utf8) {
-            completion(responseText) // Return the response text to the completion handler
-        } else {
-            completion(nil) // Return nil if there's no data or can't convert to string
+        if let data = data, let text = String(data: data, encoding: .utf8) {
+            responseText = text
         }
     }
     
     task.resume()
+    
+    // Wait for the network request to finish
+    dispatchGroup.wait()
+    
+    // Handle the response or error
+    if let error = requestError {
+        print("Error: \(error)")
+        return nil
+    }
+    
+    return responseText
 }
 
 

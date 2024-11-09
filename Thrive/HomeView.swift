@@ -42,9 +42,7 @@ struct HomeView: View {
                                 extractTextFromImage(image) { recognizedText in
                                     if let text = recognizedText {
                                         print("Extracted text: \(text)")
-                                        sendTextToOpenAI(prompt: text) { json in
-                                            
-                                        }
+                                        // sendTextToOpenAI(prompt: text)
                                     } else {
                                         print("No text recognized in the image.")
                                     }
@@ -68,11 +66,5 @@ struct HomeView: View {
             Spacer()
         }
         .padding()
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }

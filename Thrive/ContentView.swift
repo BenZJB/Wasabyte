@@ -16,7 +16,11 @@ struct ContentView: View {
         
         TabView {
             
-            HomeView()
+            DashView(medicines: [
+                "Amoxil Capsule": 3,
+                "Decetine Pills": 2,
+                "Magistral Amoxil Tablet": 1
+            ])
                .tabItem {
                     VStack {
                         Image(systemName: "house")
