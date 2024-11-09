@@ -29,7 +29,12 @@ Through this project, we learned...
 <How to install and run the project>
 <How to use the project>
 
-Credits: Waverli(LinkedIn: Waverli Leung), Brandon(LinkedIn: Brandon Gan), Sean(), Ben(LinkedIn: )
+Credits: 
+Waverli(linkedin.com/in/waverli-leung)
+Brandon(linkedin.com/in/brandon-gan-zi-en)
+Ben(linkedin.com/in/benjamin-zan-a94425204)
+Sean(Discord: haol.co)
+
 
 Don'ts:
 Do's:
