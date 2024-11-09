@@ -13,3 +13,9 @@ struct CatView: View {
         Text("Cat")
     }
 }
+
+struct CatView_Previews: PreviewProvider {
+    static var previews: some View {
+        CatView()
+    }
+}

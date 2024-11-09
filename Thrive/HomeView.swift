@@ -8,16 +8,15 @@ struct HomeView: View {
     @State private var selectedFileURL: URL?
 
     func sendTextToOpenAI(prompt: String) {
-        let url = URL(string: "http://localhost:1234/v1")!
-        
+        let url = URL(string: "http://localhost:1234/v1/completions")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let requestBody: [String: Any] = [
-            "model": "gpt-4",
+            "model": "ministral",
             "prompt": prompt,
-            "max_tokens": 100
+            "max_tokens": 1024
         ]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody)
