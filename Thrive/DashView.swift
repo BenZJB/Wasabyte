@@ -1,11 +1,3 @@
-//
-//  DashView.swift
-//  Thrive
-//
-//  Created by Sean Lin on 09/11/2024
-//  Copyright © 2024 Haol. All rights reserved.
-//
-
 import SwiftUI
 import Vision
 import UIKit
@@ -18,7 +10,8 @@ struct DashView: View {
     @State private var selectedFileURL: URL?
     @State private var name: String = UserDefaults.standard.string(forKey: "userName") ?? ""
     @State private var progressValue: Double = 0.0
-    @State var medicines: [String: Int]
+    @State private var totalCoins: Int = 0 // Track total earned coins
+    @State var medicines: [String: Int] = [:] // Stores medicines and dosages
     @State private var totalChecked: Int = 0
     @State private var selectedDate: Date = Date()
     
@@ -42,10 +35,19 @@ struct DashView: View {
         VStack(spacing: 20) {
             VStack {
                 HStack {
-                    Image(systemName: "pawprint.circle")
-                        .resizable()
-                        .foregroundColor(.purple)
-                        .frame(width: 40, height: 40)
+                    Button(action: {
+                        print("Total coins: \(totalCoins)")
+                    }) {
+                        HStack {
+                            Image(systemName: "pawprint.circle")
+                                .resizable()
+                                .foregroundColor(.purple)
+                                .frame(width: 40, height: 40)
+                            Text("\(totalCoins) ")
+                                .font(.headline)
+                                .foregroundColor(.purple)
+                        }
+                    }
                     Spacer()
                     TextField("Enter your name", text: $name, onCommit: {
                         saveName()
@@ -104,6 +106,7 @@ struct DashView: View {
                                 medicine: medicine,
                                 dosageCount: medicines[medicine] ?? 1,
                                 checkedCount: $totalChecked,
+                                totalCoins: $totalCoins, // Pass the binding to update coins
                                 updateProgress: updateProgress
                             )
                             .padding(1)
@@ -167,6 +170,7 @@ struct DashView: View {
         }
     }
     
+    // Function to parse text and extract medicine names and dosages
     func extractMedicines(from text: String) {
         let lines = text.split(separator: "\n")
         var extractedMedicines: [String: Int] = [:]
@@ -206,18 +210,30 @@ struct DashView: View {
     }
 }
 
+// MedicineDosageView with coin tracking logic
 struct MedicineDosageView: View {
     let medicine: String
     let dosageCount: Int
     @Binding var checkedCount: Int
+    @Binding var totalCoins: Int // Binding to update total coins
     var updateProgress: () -> Void
 
     @State private var checkedDosages: [Bool]
+    @State private var showAlert = false
+    @State private var rewardMessage: String = ""
     
-    init(medicine: String, dosageCount: Int, checkedCount: Binding<Int>, updateProgress: @escaping () -> Void) {
+    // Define rewards for each medicine and its checkboxes
+    private let rewards: [String: [Int]] = [
+        "Amoxil Capsule": [2, 3, 5],
+        "Decetine Pills": [5, 5],
+        "Magistral Amoxil Tablet": [10]
+    ]
+    
+    init(medicine: String, dosageCount: Int, checkedCount: Binding<Int>, totalCoins: Binding<Int>, updateProgress: @escaping () -> Void) {
         self.medicine = medicine
         self.dosageCount = dosageCount
         _checkedCount = checkedCount
+        _totalCoins = totalCoins
         self.updateProgress = updateProgress
         _checkedDosages = State(initialValue: Array(repeating: false, count: dosageCount))
     }
@@ -237,6 +253,13 @@ struct MedicineDosageView: View {
                             checkedDosages[index] = newValue
                             checkedCount += newValue ? 1 : -1
                             updateProgress()
+                            if newValue {
+                                if let reward = rewards[medicine]?[index] {
+                                    totalCoins += reward // Update total coins
+                                    rewardMessage = "You've earned \(reward) paw coins!"
+                                    showAlert = true
+                                }
+                            }
                         }
                     )) {
                         EmptyView()
@@ -250,6 +273,13 @@ struct MedicineDosageView: View {
         .frame(width: 200, height: 100)
         .background(Color(hex: "C6E2E9").opacity(0.8))
         .cornerRadius(10)
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Congratulations!"),
+                message: Text(rewardMessage),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
 
