@@ -20,12 +20,12 @@ class StoreViewModel: ObservableObject {
     @Published var catCoins: Int = 100
     @Published var purchasedItems: [CatFood] = []
     @Published var storeItems: [CatFood] = [
-        CatFood(name: "Tuna Treat", price: 50, image: "tuna", description: "Fresh tuna bits"),
-        CatFood(name: "Chicken Delight", price: 30, image: "chicken", description: "Tender chicken pieces"),
-        CatFood(name: "Salmon Feast", price: 70, image: "salmon", description: "Premium salmon"),
-        CatFood(name: "Cat Kibble", price: 20, image: "kibble", description: "Crunchy kibble"),
-        CatFood(name: "Fish Medley", price: 45, image: "fish", description: "Mixed seafood treat"),
-        CatFood(name: "Milk Bottle", price: 25, image: "milk", description: "Cat-safe milk")
+        CatFood(name: "Fresh Milk", price: 50, image: "milk", description: "Cat-safe milk"),
+        CatFood(name: "Boiled Egg", price: 30, image: "boiled-egg", description: "Boiled to perfection"),
+        CatFood(name: "Meat Feast", price: 70, image: "meat", description: "Pure protein power source"),
+        CatFood(name: "Lettuce Salad", price: 20, image: "salad", description: "Crunchy green nibbles"),
+        CatFood(name: "Strawberry Delight", price: 45, image: "strawberry", description: "Fresh berry burst"),
+        CatFood(name: "Buttered Bread", price: 25, image: "bread", description: "Not too oily")
     ]
     
     func purchaseItem(_ item: CatFood) -> Bool {
