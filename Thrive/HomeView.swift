@@ -7,69 +7,6 @@ struct HomeView: View {
     @State private var isFileImporterPresented = false
     @State private var selectedFileURL: URL?
 
-    func sendTextToOpenAI(prompt: String) {
-        let url = URL(string: "http://localhost:1234/v1/completions")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let requestBody: [String: Any] = [
-            "model": "ministral",
-            "prompt": prompt,
-            "max_tokens": 1024
-        ]
-        
-        request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody)
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("Error sending request: \(error)")
-                return
-            }
-            
-            if let data = data, let responseText = String(data: data, encoding: .utf8) {
-                print("Response from API: \(responseText)")
-            }
-        }
-        
-        task.resume()
-    }
-    
-    func extractTextFromImage(_ image: UIImage, completion: @escaping (String?) -> Void) {
-        guard let cgImage = image.cgImage else {
-            print("Failed to convert UIImage to CGImage.")
-            completion(nil)
-            return
-        }
-        
-        let request = VNRecognizeTextRequest { (request, error) in
-            if let error = error {
-                print("Text recognition error: \(error)")
-                completion(nil)
-                return
-            }
-            
-            let recognizedText = request.results?.compactMap { result -> String? in
-                guard let observation = result as? VNRecognizedTextObservation else { return nil }
-                return observation.topCandidates(1).first?.string
-            }.joined(separator: "\n")
-            
-            completion(recognizedText)
-        }
-        
-        request.recognitionLevel = .accurate
-        
-        let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-        DispatchQueue.global(qos: .userInitiated).async {
-            do {
-                try requestHandler.perform([request])
-            } catch {
-                print("Failed to perform text recognition: \(error)")
-                completion(nil)
-            }
-        }
-    }
-
     var body: some View {
         VStack(spacing: 20) {
             // Custom Top Section
@@ -105,7 +42,9 @@ struct HomeView: View {
                                 extractTextFromImage(image) { recognizedText in
                                     if let text = recognizedText {
                                         print("Extracted text: \(text)")
-                                        sendTextToOpenAI(prompt: text)
+                                        sendTextToOpenAI(prompt: text) { json in
+                                            
+                                        }
                                     } else {
                                         print("No text recognized in the image.")
                                     }

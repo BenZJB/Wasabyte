@@ -9,7 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var model = StoreViewModel()
+    
     var body: some View {
+        
         TabView {
             
             HomeView()
@@ -21,7 +25,7 @@ struct ContentView: View {
                     }
                 }
 
-            StoreView()
+            StoreView(viewModel: model)
                .tabItem {
                     VStack {
                         Image(systemName: "storefront.fill")
@@ -30,7 +34,7 @@ struct ContentView: View {
                     }
                 }
             
-            CatView()
+            CatView(viewModel: model, catMessage: "", size: 320)
                .tabItem {
                     VStack {
                         Image(systemName: "cat.fill")

@@ -1,17 +1,12 @@
 //
-//  CommunityView.swift
-//  Thrive
-//
-//  Created by Sean Lin on 08/11/2024
-//  Copyright © 2024 Haol. All rights reserved.
-//
-//
 //  storeview.swift
 //  HealthThrive
 //
 //  Created by 保会 on 08/11/2024.
 //
+
 import SwiftUI
+import Combine
 
 struct CatFood: Identifiable {
     let id = UUID()
@@ -44,7 +39,9 @@ class StoreViewModel: ObservableObject {
 }
 
 struct StoreView: View {
-    @StateObject private var viewModel = StoreViewModel()
+    
+    @ObservedObject var viewModel: StoreViewModel
+    
     @State private var showingPurchaseAlert = false
     @State private var alertMessage = ""
     
@@ -55,16 +52,16 @@ struct StoreView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
+                
                 HStack {
-                    Image(systemName: "dollarsign.circle.fill")
-                        .foregroundColor(.yellow)
+                    Image(systemName: "pawprint.circle.fill")
+                        .resizable()
+                        .foregroundColor(.orange)
+                        .frame(width: 24, height: 24)
                     Text("\(viewModel.catCoins) Cat Coins")
                         .font(.title2)
                         .bold()
                 }
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(10)
                 
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.storeItems) { item in
@@ -74,9 +71,10 @@ struct StoreView: View {
                     }
                 }
                 .padding()
+                .background(Color.bg.ignoresSafeArea())
             }
         }
-        .navigationTitle("Cat Food Store")
+        .background(Color.bg.ignoresSafeArea(.all))
         .alert(isPresented: $showingPurchaseAlert) {
             Alert(
                 title: Text("Purchase Status"),
@@ -116,7 +114,13 @@ struct StoreItemCard: View {
                 .foregroundColor(.gray)
             
             HStack {
-                Text("\(item.price) Coins")
+                
+                Image(systemName: "pawprint.circle.fill")
+                    .resizable()
+                    .foregroundColor(.orange)
+                    .frame(width: 20, height: 20)
+                
+                Text("\(item.price)")
                     .foregroundColor(.orange)
                     .bold()
                 
@@ -124,10 +128,10 @@ struct StoreItemCard: View {
                 
                 Button(action: onPurchase) {
                     Text("Buy")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
-                        .background(Color.blue)
+                        .background(Color.bg)
                         .cornerRadius(8)
                 }
             }
@@ -135,14 +139,14 @@ struct StoreItemCard: View {
         .padding()
         .background(Color.white)
         .cornerRadius(12)
-        .shadow(radius: 4)
+        .shadow(color: Color.black.opacity(0.2), radius: 4)
     }
 }
 
-struct StoreView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            StoreView()
-        }
-    }
-}
+//struct StoreView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            StoreView()
+//        }
+//    }
+//}

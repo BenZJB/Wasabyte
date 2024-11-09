@@ -10,6 +10,7 @@ import SwiftUI
 
 @main
 struct ThriveApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
